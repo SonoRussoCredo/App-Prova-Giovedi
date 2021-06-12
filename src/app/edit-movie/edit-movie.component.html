@@ -1,0 +1,26 @@
+<h1>Edit {{mymovie.title}}</h1>
+<form name="editform" novalidate id="editform" #editform="ngForm" (ngSubmit)= "update()">
+    <div class="row">
+        <div class="col-4">
+            <label for="title">Nome:</label>
+            <input type="text" id="title" placeholder="Inserisci il titolo" #title="ngModel" class="form-control" name="title" [(ngModel)] = "mymovie.title" required>
+            <label for="title">Trama:</label>
+            <input type="text" id="plot" placeholder="Inserisci il titolo" #title="ngModel" class="form-control" name="plot" [(ngModel)] = "mymovie.plot" required>
+            <label for="title">Attori:</label>
+            <input type="text" id="cast" placeholder="Inserisci il titolo" #title="ngModel" class="form-control" name="cast" [(ngModel)] = "mymovie.cast" required>
+            <div class="alert alert-danger" [hidden] = "title.valid">Inserisci un titolo</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4 mt-3">
+            <button type="submit" class="btn btn-success" [disabled]= "editform.invalid" (click) = "update()">Salva</button>
+            <button type="button" class="btn btn-success" (click)="resetMovie()">Resetta</button>
+        </div>
+    </div>
+</form>
+
+<form>
+    <pre>{{movie | json}}</pre>
+    <pre>{{mymovie | json}}</pre>
+</form>

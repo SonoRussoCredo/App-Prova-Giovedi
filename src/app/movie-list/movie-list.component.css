@@ -1,0 +1,10 @@
+.card-title {
+    color: brown;
+    font-size: 1.8em;
+  }
+  .card-text{
+    color: brown;
+  }
+  button {
+    margin: 10px;
+  }

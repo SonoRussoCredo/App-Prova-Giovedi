@@ -1,0 +1,10 @@
+#coloralo{
+    background-color: blueviolet;
+    padding: 3em;
+    color: white;
+}
+
+*{
+    color: greenyellow;
+    font-family: 'Staatliches';
+}

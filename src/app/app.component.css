@@ -1,0 +1,42 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+  
+  main{
+    background-color: #b100c9;
+    font-family: 'Staatliches';
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+    color: greenyellow;
+    display: inline-block;
+    list-style-type: none;
+    font-family: 'Staatliches';
+    font-size: 3rem;
+  }
+
+  footer {
+    font-family: 'Staatliches';
+  }
+
+  nav > li > a {
+    font-family: 'Staatliches';
+  }
+
+  nav div > li > a{
+    font-family: 'Staatliches';
+  }
+
+  footer > section > span {
+    color: white;
+  }
+
+  .nav-link {
+    font-family: 'Staatliches';
+    font-size: 1.5rem;
+  }
+
+  span{
+    color: greenyellow;
+    font-size: 1.2rem
+  }

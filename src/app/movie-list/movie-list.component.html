@@ -1,0 +1,15 @@
+
+<div class="row">
+  <div class="d-flex justify-content-between">
+    <div id="bordo_card" *ngFor ="let movie of movielist; let i = index;" class="card m-5 p-3">
+      <img [src]="movie.image" alt="..." style="width:150px; height:200px" class="m-3">
+        <h5 class="card-title">{{movie.title}}</h5>
+        <p class="card-text">{{movie.plot | slice : 0:30}}</p>
+        <button class="btn-primary" (click) ="viewDetail(movie.id)">View Detail</button>
+        <button class="btn-primary" (click)="editdetail(movie.id)">Edit Movie</button>
+    </div>
+  </div>
+</div>
+    
+   
+

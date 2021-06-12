@@ -1,0 +1,67 @@
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="container">
+    <div class="row">
+    <a class="navbar-brand" href="https://www.youtube.com/">FakeFlixxx</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" href="#" (click) ="cambia('rent')">Noleggia Film</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#" (click) ="cambia('list')">Lista dei film</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</nav>
+
+<main>
+ 
+<div class="d-flex justify-content-between">
+<div [ngSwitch]= "selected">
+  <div *ngSwitchDefault>
+    <app-movie-list [movielist] = 'movies' (showmovie) = 'viewDetail($event)' (editmovie)="editDetail($event)"></app-movie-list>
+  </div> 
+
+  <div *ngSwitchCase ="'edit'">
+    <app-edit-movie [movie]= selectedMovie  (movieupdate)="updateMovie($event)"></app-edit-movie>
+  </div>
+   
+  <div *ngSwitchCase ="'rent'">
+  <app-rent-movie></app-rent-movie>
+  </div>
+
+  <div *ngSwitchCase ="'create'">
+    <app-create-movie (movieCreated) = "updateMovie($event)" [lastId]="lastId"></app-create-movie>
+  </div>
+
+<div *ngSwitchCase ="'detail'">
+  <app-movie-detail [movie]="selectedMovie"></app-movie-detail>
+</div>
+</div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="text-center text-m-start bg-dark text-muted">
+  <section
+    class="d-flex justify-content-center justify-content-between p-4">
+
+    <span>Passa sui nostri social per altri contenuti strabilianti:</span>
+
+    <img src="assets/images/facebook(1).png" class="me-5 d-none d-lg-block width: 25%" alt="Responsive image">
+    <img src="assets/images/instagram.png" class="me-5 d-none d-lg-block width: 25%" alt="Responsive image">
+    <img src="assets/images/twitter(1).png" class="me-5 d-none d-lg-block width: 25%" alt="Responsive image"> 
+
+    <span>Dona un po' di dindini per le nostre vacanze:</span>
+
+    <img src="assets/images/paypal.png" class="me-5 d-none d-lg-block width: 25%" alt="Responsive image">
+
+  </section>
+ 
+</footer>
